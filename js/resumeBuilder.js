@@ -51,6 +51,10 @@ var bio = {
 		$("#topContacts").append(formattedEmail);
 		$("#topContacts").append(formattedGitHub);
 		$("#topContacts").append(formattedLocation);
+		$("#footerContacts").append(formattedMobile);
+	  $("#footerContacts").append(formattedEmail);
+		$("#footerContacts").append(formattedGitHub);
+		$("#footerContacts").append(formattedLocation);
 
 		$("#header").append(formattedwelcomeMsg);
 		$("#header").append(formattedbioPic);
@@ -226,9 +230,14 @@ var project = {
 	}
 };
 
+var gmap = function(){
+	$("#mapDiv").append(googleMap);
+};
+
 bio.display();
 work.display();
 education.display();
 project.display();
+gmap();
 
-$("#mapDiv").append(googleMap);
+
