@@ -89,23 +89,18 @@ var work = {
       "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
     }
   ],
-  	//create div work-entry for each jobs and insert title, dates and description inside the div
-    display: function(){
+  //create div work-entry for each jobs and insert title, dates and description inside the div
+  display: function(){
 		for (var job in work.jobs){
-
 			// create a new div for work experience
 			$("#workExperience").append(HTMLworkStart);
-
 			// concat employer and title
 			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-
 			var formattedEmployerTitle = formattedEmployer + formattedTitle;
 			$(".work-entry:last").append(formattedEmployerTitle);
-
 			var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 			$(".work-entry:last").append(formattedDates);
-
 			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 			$(".work-entry:last").append(formattedDescription);
 		}
@@ -140,24 +135,17 @@ var education = {
 		"dates": 2011,
 		"url": "http://www.caelum.com.br"
 	}],
-
 	//create div education-entry for each school and onlineCourses, insert information inside the div
 	display: function(){
-
 		for(var school in education.schools){
-
 			// create a new div for work experience
 			$("#education").append(HTMLschoolStart);
-
 			var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
 			$(".education-entry:last").append(formattedName);
-
 			var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 			$(".education-entry:last").append(formattedDates);
-
 			var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 			$(".education-entry:last").append(formattedLocation);
-
 			var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 			$(".education-entry:last").append(formattedMajor);
 		}
@@ -165,20 +153,15 @@ var education = {
 		$("#education").append(HTMLonlineClasses);
 
 		for(var course in education.onlineCourses){
-
 			// create a new div for work experience
 			$("#education").append(HTMLschoolStart);
-
 			// concat title and school
 			var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[course].title);
 			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
-
 			var formattedTitleSchool = formattedTitle + formattedSchool;
 			$(".education-entry:last").append(formattedTitleSchool);
-
 			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
 			$(".education-entry:last").append(formattedDates);
-
 			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 			$(".education-entry:last").append(formattedURL);
 		}
@@ -204,23 +187,17 @@ var project = {
     "images/197x148.gif"
   ]
   }],
-
   //create div project-entry for each project, insert information inside the div
   display: function(){
 		for(var proj in project.projects){
-
 			// create a new div for work experience
 			$("#projects").append(HTMLprojectStart);
-
 			var formattedTitle = HTMLprojectTitle.replace("%data%", project.projects[proj].titles);
 			$(".project-entry:last").append(formattedTitle);
-
 			var formattedDates = HTMLprojectDates.replace("%data%", project.projects[proj].dates);
 			$(".project-entry:last").append(formattedDates);
-
 			var formattedDescription = HTMLprojectDescription.replace("%data%", project.projects[proj].description);
 			$(".project-entry:last").append(formattedDescription);
-
 			//insert the images
 			project.projects[proj].images.forEach(function(entry) {
     		var formattedImage = HTMLprojectImage.replace("%data%", entry);
