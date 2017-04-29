@@ -127,7 +127,7 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     education.schools.forEach(function(school) {
-      locations.push(school.location);
+      locations.push(school.name+school.location);
     });
 
     // iterates through work locations and appends each location to
@@ -135,7 +135,7 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     work.jobs.forEach(function(job) {
-      locations.push(job.location);
+      locations.push(job.employer+job.location);
     });
 
     return locations;
@@ -151,14 +151,17 @@ function initializeMap() {
     // The next lines save location data from the search result object to local variables
     var lat = placeData.geometry.location.lat(); // latitude from the place service
     var lon = placeData.geometry.location.lng(); // longitude from the place service
-    var name = placeData.formatted_address; // name of the place from the place service
+    var address = placeData.formatted_address; // name of the place from the place service
+    var name = placeData.name; // name of the place from the place service
     var bounds = window.mapBounds; // current boundaries of the map window
+
 
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
       title: name,
+      address: address,
       icon: 'images/pin.png'
     });
 
@@ -172,6 +175,10 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+      infoWindow.setContent('<div><strong>' + marker.title + '</strong><br>' +
+        'Address: ' + marker.address + '<br>' +
+        marker.position + '</div>');
+      infoWindow.open(map, this);
     });
 
     // this is where the pin actually gets added to the map.
@@ -213,6 +220,7 @@ function initializeMap() {
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
       service.textSearch(request, callback);
+
     });
   }
 

@@ -66,7 +66,7 @@ var work = {
   jobs: [{
       employer: 'Embraer SA',
       title: 'Moldador',
-      location: 'Embraer S.A., Av. Brg. Faria Lima, 2170 - Putim, São José dos Campos - SP',
+      location: 'Av. Brg. Faria Lima, 2170 - Putim, São José dos Campos - SP',
       dates: 'Sep 2007 - Oct 2016',
       description: 'Who moved my cheese cheesy feet cauliflower cheese. ' +
         'Queso taleggio when the cheese comes out everybody\'s happy airedale '
@@ -74,7 +74,7 @@ var work = {
     {
       employer: 'Embraer SA',
       title: 'Ajudante',
-      location: 'Embraer S.A., Av. Brg. Faria Lima, 2170 - Putim, São José dos Campos - SP',
+      location: 'Av. Brg. Faria Lima, 2170 - Putim, São José dos Campos - SP',
       dates: 'Jun 2007 - Aug 2007',
       description: 'Who moved my cheese cheesy feet cauliflower cheese. ' +
         'Queso taleggio when the cheese comes out everybody\'s happy airedale '
